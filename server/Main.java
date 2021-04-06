@@ -72,7 +72,7 @@ class ClientHandler extends Thread implements Runnable {
     private Socket socket;
     DataInputStream dis;
     DataOutputStream dos;
-
+//Passing input and output stream objects to create ClientHandler
     public ClientHandler(Socket socket, DataInputStream dis, DataOutputStream dos){
         this.socket = socket;
         this.dis = dis;
@@ -82,6 +82,7 @@ class ClientHandler extends Thread implements Runnable {
     public void run(){
         try {
             while(true) {
+                System.out.println("Message sucessfully sent");
                 BufferedReader in = new BufferedReader(new InputStreamReader(dis));
                 Main.textBox.appendText(in.readLine());
                 Main.textBox.appendText( "\n");
